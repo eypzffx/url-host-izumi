@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akshay-Eypz | Iconic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: url('https://files.catbox.moe/7qf7nh.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-y: auto;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px 20px 80px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      animation: slideUp 1.5s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .card img {
+      width: 120px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 15px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .card h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #00ffee;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .buttons a {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid #00ffee;
+      color: #00ffee;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: #00ffee;
+      color: #000;
+    }
+
+    .audio-btn {
+      margin: 15px auto;
+      padding: 10px 16px;
+      background: #25D366;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      width: fit-content;
+      cursor: pointer;
+    }
+
+    .footer {
+      margin-top: 20px;
+    }
+
+    #time {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .story {
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .watermark {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <img src="https://files.catbox.moe/al89oi.png" alt="PP" />
+      <h1>Akshay-Eypz</h1>
+      <p>私は無の中に生まれ、そして今、すべての上に立っている</p>
+
+      <div class="buttons">
+        <a href="https://www.instagram.com/_66l.0?igsh=NzYxbWdycjZkYmZ2" target="_blank">Instagram</a>
+        <a href="https://whatsapp.com/channel/0029Vaf2tKvGZNCmuSg8ma2O" target="_blank">WhatsApp Channel</a>
+        <a href="https://github.com/Akshay-Eypz" target="_blank">GitHub</a>
+      </div>
+
+      <div class="audio-btn" onclick="toggleAudio()">Play / Pause Music</div>
+      <audio id="background-audio" src="https://cdn.eypz.ct.ws/url/eypz.mp3" preload="auto"></audio>
+    </div>
+
+    <div class="footer">
+      <div id="time">00:00:00</div>
+    </div>
+
+    <div class="story">
+      <h3>About Me</h3>
+      <p>
+        I'm a developer from India who loves coding and creating new things. Right now, I'm mainly working on my project, the Izumi Bot and REST APIs.
+      </p>
+      <p>
+        I speak English fluently, and I enjoy working on projects that help me grow and improve as a developer.
+      </p>
+    </div>
+
+    <div class="watermark">© Akshay-Eypz 2025</div>
+  </div>
+
+  <script>
+    let audio = document.getElementById("background-audio");
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('time').textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>
